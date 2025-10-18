@@ -1,0 +1,84 @@
+[gd_scene load_steps=7 format=3 uid="uid://0741fyo3shw7"]
+
+[ext_resource type="Script" path="res://scripts/inventory_slot.gd" id="1_46bcd"]
+[ext_resource type="Texture2D" uid="uid://bc3oktl27br5n" path="res://assets/inventory/pixil-frame-0(5).png" id="2_icviv"]
+[ext_resource type="Texture2D" uid="uid://drnxdf12rj34" path="res://assets/poison_bottle/pixil-frame-0(1).png" id="3_26wq1"]
+[ext_resource type="Texture2D" uid="uid://ctrvqbuj1mbhs" path="res://assets/poison_bottle/pixil-frame-0.png" id="4_w22f4"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_2u0a0"]
+bg_color = Color(0, 0, 0, 0.701961)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_irlrt"]
+bg_color = Color(1, 1, 1, 1)
+
+[node name="inventory_slot" type="Control"]
+custom_minimum_size = Vector2(100, 100)
+layout_mode = 3
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+grow_horizontal = 2
+grow_vertical = 2
+size_flags_vertical = 4
+script = ExtResource("1_46bcd")
+item_color = Color(0, 0, 0, 0)
+
+[node name="bg" type="Panel" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_2u0a0")
+
+[node name="border" type="TextureRect" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("2_icviv")
+
+[node name="item" type="MarginContainer" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/margin_left = 10
+theme_override_constants/margin_top = 5
+theme_override_constants/margin_right = 10
+theme_override_constants/margin_bottom = 15
+
+[node name="mask" type="TextureRect" parent="item"]
+clip_children = 1
+layout_mode = 2
+texture = ExtResource("3_26wq1")
+
+[node name="poison_color" type="Panel" parent="item/mask"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_irlrt")
+
+[node name="item_border" type="TextureRect" parent="item"]
+layout_mode = 2
+texture = ExtResource("4_w22f4")
+
+[node name="selected" type="TextureRect" parent="."]
+modulate = Color(1, 0.788235, 0, 1)
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("2_icviv")

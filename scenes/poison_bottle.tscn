@@ -1,0 +1,38 @@
+[gd_scene load_steps=6 format=3 uid="uid://botmceldnowi5"]
+
+[ext_resource type="Script" path="res://scripts/poison_bottle.gd" id="1_0tw2w"]
+[ext_resource type="Texture2D" uid="uid://drnxdf12rj34" path="res://assets/poison_bottle/pixil-frame-0(1).png" id="2_kc4sq"]
+[ext_resource type="Texture2D" uid="uid://lqm0rjqp7223" path="res://assets/square.png" id="3_n48nj"]
+[ext_resource type="Texture2D" uid="uid://ctrvqbuj1mbhs" path="res://assets/poison_bottle/pixil-frame-0.png" id="4_qgjdd"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_jbo14"]
+size = Vector2(11.6, 14.8)
+
+[node name="RigidBody2D" type="CharacterBody2D"]
+z_index = 1
+script = ExtResource("1_0tw2w")
+
+[node name="Area2D" type="Area2D" parent="."]
+position = Vector2(0, 0.5)
+scale = Vector2(3, 3)
+collision_layer = 8
+collision_mask = 15
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
+position = Vector2(0, -0.0999999)
+shape = SubResource("RectangleShape2D_jbo14")
+
+[node name="color_mask" type="Sprite2D" parent="Area2D"]
+clip_children = 1
+position = Vector2(0, -0.5)
+texture = ExtResource("2_kc4sq")
+
+[node name="potion_color" type="Sprite2D" parent="Area2D/color_mask"]
+modulate = Color(0, 0.818059, 0.276036, 1)
+texture = ExtResource("3_n48nj")
+
+[node name="bottle_sprite" type="Sprite2D" parent="Area2D"]
+position = Vector2(0, -0.5)
+texture = ExtResource("4_qgjdd")
+
+[connection signal="body_entered" from="Area2D" to="." method="_on_area_2d_body_entered"]

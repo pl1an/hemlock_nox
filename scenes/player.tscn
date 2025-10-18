@@ -1,0 +1,348 @@
+[gd_scene load_steps=40 format=3 uid="uid://bpagsb4rdbhhn"]
+
+[ext_resource type="Script" path="res://scripts/player.gd" id="1_8aqnk"]
+[ext_resource type="Texture2D" uid="uid://bi2twe3c0ilid" path="res://assets/characther/pixilart-sprite(3).png" id="2_dvipr"]
+[ext_resource type="Texture2D" uid="uid://b2sadn35v2ia5" path="res://assets/characther/pixilart-sprite(6).png" id="3_b165m"]
+[ext_resource type="PackedScene" uid="uid://cvktl1yjfnbnu" path="res://scenes/poison_effects.tscn" id="3_mv8ol"]
+[ext_resource type="Texture2D" uid="uid://d5sk3w4rfnqf" path="res://assets/characther/pixilart-sprite(7).png" id="3_w7bsn"]
+[ext_resource type="PackedScene" uid="uid://cknq4pht0hcle" path="res://scenes/healthbar.tscn" id="4_foyag"]
+[ext_resource type="PackedScene" uid="uid://cg2joxgbpsacq" path="res://scenes/inventory.tscn" id="7_4tj7s"]
+[ext_resource type="PackedScene" uid="uid://g1g2gdso5nl7" path="res://scenes/level_up_manager.tscn" id="8_c62nc"]
+[ext_resource type="PackedScene" uid="uid://bm1s3yltf20hv" path="res://scenes/difficulty_manager.tscn" id="9_6vwgd"]
+[ext_resource type="PackedScene" uid="uid://bup1e6docqhtj" path="res://scenes/spawner.tscn" id="10_pkcug"]
+[ext_resource type="PackedScene" uid="uid://dl4yxt8fb5di5" path="res://scenes/death_screen.tscn" id="10_r0gqm"]
+[ext_resource type="PackedScene" uid="uid://7ml8ewikb304" path="res://scenes/menu.tscn" id="11_ot3j1"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_lv48r"]
+atlas = ExtResource("2_dvipr")
+region = Rect2(0, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_8jmdw"]
+atlas = ExtResource("2_dvipr")
+region = Rect2(32, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_6vx6q"]
+atlas = ExtResource("2_dvipr")
+region = Rect2(64, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_j2ywa"]
+atlas = ExtResource("2_dvipr")
+region = Rect2(96, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ao1qw"]
+atlas = ExtResource("3_w7bsn")
+region = Rect2(0, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ia83e"]
+atlas = ExtResource("3_w7bsn")
+region = Rect2(32, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_axrl0"]
+atlas = ExtResource("3_w7bsn")
+region = Rect2(64, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_77ldr"]
+atlas = ExtResource("3_w7bsn")
+region = Rect2(96, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_chf8g"]
+atlas = ExtResource("3_w7bsn")
+region = Rect2(128, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_6dffk"]
+atlas = ExtResource("3_w7bsn")
+region = Rect2(160, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_43mey"]
+atlas = ExtResource("3_w7bsn")
+region = Rect2(160, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_qmv4j"]
+atlas = ExtResource("3_w7bsn")
+region = Rect2(128, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_cr7wq"]
+atlas = ExtResource("3_w7bsn")
+region = Rect2(96, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ibmau"]
+atlas = ExtResource("3_w7bsn")
+region = Rect2(64, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_xied0"]
+atlas = ExtResource("3_w7bsn")
+region = Rect2(32, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_p8ueq"]
+atlas = ExtResource("3_w7bsn")
+region = Rect2(0, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_nqql5"]
+atlas = ExtResource("3_w7bsn")
+region = Rect2(192, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_kjej2"]
+atlas = ExtResource("3_b165m")
+region = Rect2(0, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_k31ue"]
+atlas = ExtResource("3_b165m")
+region = Rect2(32, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_cy8n5"]
+atlas = ExtResource("3_b165m")
+region = Rect2(64, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_o6fwa"]
+atlas = ExtResource("3_b165m")
+region = Rect2(96, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_yusro"]
+atlas = ExtResource("3_b165m")
+region = Rect2(128, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_msrd5"]
+atlas = ExtResource("3_b165m")
+region = Rect2(160, 0, 32, 32)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_0ql75"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_lv48r")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_8jmdw")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_6vx6q")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_j2ywa")
+}],
+"loop": true,
+"name": &"idle",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ao1qw")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ia83e")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_axrl0")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_77ldr")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_chf8g")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_6dffk")
+}],
+"loop": false,
+"name": &"roll_transition_in",
+"speed": 25.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_43mey")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_qmv4j")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_cr7wq")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ibmau")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_xied0")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_p8ueq")
+}],
+"loop": false,
+"name": &"roll_transition_out",
+"speed": 25.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_nqql5")
+}],
+"loop": false,
+"name": &"rolling",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_kjej2")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_k31ue")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_cy8n5")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_o6fwa")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_yusro")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_msrd5")
+}],
+"loop": true,
+"name": &"run",
+"speed": 10.0
+}]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_v1r0s"]
+size = Vector2(59, 125.5)
+
+[sub_resource type="GDScript" id="GDScript_k7x0c"]
+script/source = "extends Timer
+
+
+# Called when the node enters the scene tree for the first time.
+func _ready() -> void:
+	pass # Replace with function body.
+
+
+# Called every frame. 'delta' is the elapsed time since the previous frame.
+func _process(delta: float) -> void:
+	pass
+"
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_d5uum"]
+bg_color = Color(0.755978, 0.567237, 0, 1)
+
+[node name="player" type="CharacterBody2D" node_paths=PackedStringArray("levelupmanager", "deathScreen")]
+top_level = true
+visibility_layer = 16
+z_index = 1
+collision_layer = 2
+collision_mask = 23
+script = ExtResource("1_8aqnk")
+MAXHEALTH = 1000.0
+SPEED = 500.0
+MAXROLLS = 1
+ROLLSPEED = 1000.0
+THROWSPEED = 500.0
+MAXINVENTORYSIZE = 4
+NEXTLEVELUPEXP = 3
+effects_potency_keys = Array[String](["slow", "poison", "burn", "confusion", "heal", "regeneration", "weak", "cripple", "decay"])
+levelupmanager = NodePath("UI/Control/level_up_manager")
+deathScreen = NodePath("UI/Control/death_screen")
+
+[node name="Sprite2D" type="AnimatedSprite2D" parent="."]
+scale = Vector2(5, 5)
+sprite_frames = SubResource("SpriteFrames_0ql75")
+animation = &"roll_transition_in"
+autoplay = "idle"
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(-3.5, 3.25)
+shape = SubResource("RectangleShape2D_v1r0s")
+
+[node name="Camera2D" type="Camera2D" parent="."]
+rotation_smoothing_speed = 2.0
+
+[node name="roll_timer" type="Timer" parent="."]
+wait_time = 0.5
+script = SubResource("GDScript_k7x0c")
+
+[node name="poison_effects" parent="." instance=ExtResource("3_mv8ol")]
+effect_colors = Array[Color]([Color(0.339605, 0.542632, 1, 1), Color(2.52686e-07, 0.476484, 0, 1), Color(1, 0.392157, 0, 1), Color(0.603246, 0.603246, 1.92523e-07, 1), Color(1, 0.129412, 0.458824, 1), Color(0.488179, 1, 0.456277, 1), Color(0.466181, 0.466181, 0.466181, 1), Color(0.423185, 9.08468e-07, 3.1285e-07, 1), Color(0.596388, 0.00250087, 0.845691, 1)])
+
+[node name="UI" type="CanvasLayer" parent="."]
+follow_viewport_scale = -7.28
+
+[node name="Control" type="Control" parent="UI"]
+z_index = 100
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+
+[node name="bars" type="VBoxContainer" parent="UI/Control"]
+visible = false
+layout_mode = 2
+offset_right = 300.0
+offset_bottom = 4.0
+size_flags_horizontal = 0
+size_flags_vertical = 0
+mouse_filter = 2
+
+[node name="MarginContainer2" type="MarginContainer" parent="UI/Control/bars"]
+layout_mode = 2
+theme_override_constants/margin_left = 20
+
+[node name="healthbar" parent="UI/Control/bars/MarginContainer2" instance=ExtResource("4_foyag")]
+custom_minimum_size = Vector2(300, 75)
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 3
+
+[node name="MarginContainer" type="MarginContainer" parent="UI/Control/bars"]
+layout_mode = 2
+theme_override_constants/margin_left = 20
+
+[node name="expbar" parent="UI/Control/bars/MarginContainer" instance=ExtResource("4_foyag")]
+custom_minimum_size = Vector2(150, 0)
+layout_mode = 2
+size_flags_horizontal = 0
+size_flags_vertical = 3
+style_box = SubResource("StyleBoxFlat_d5uum")
+
+[node name="inventory_margin" type="MarginContainer" parent="UI/Control"]
+layout_mode = 1
+anchors_preset = 2
+anchor_top = 1.0
+anchor_bottom = 1.0
+offset_top = -100.0
+offset_right = 400.0
+grow_vertical = 0
+mouse_filter = 2
+theme_override_constants/margin_left = 20
+theme_override_constants/margin_bottom = 20
+
+[node name="inventory" parent="UI/Control/inventory_margin" node_paths=PackedStringArray("player") instance=ExtResource("7_4tj7s")]
+layout_mode = 2
+mouse_filter = 2
+player = NodePath("../../../..")
+
+[node name="difficulty_manager" parent="UI/Control" node_paths=PackedStringArray("spawner") instance=ExtResource("9_6vwgd")]
+layout_mode = 1
+spawner = NodePath("../../../spawner")
+
+[node name="death_screen" parent="UI/Control" node_paths=PackedStringArray("menu") instance=ExtResource("10_r0gqm")]
+layout_mode = 1
+menu = NodePath("../menu")
+
+[node name="level_up_manager" parent="UI/Control" node_paths=PackedStringArray("player") instance=ExtResource("8_c62nc")]
+layout_mode = 1
+player = NodePath("../../..")
+
+[node name="menu" parent="UI/Control" node_paths=PackedStringArray("player", "dificulty_manager", "bars") instance=ExtResource("11_ot3j1")]
+layout_mode = 1
+player = NodePath("../../..")
+dificulty_manager = NodePath("../difficulty_manager")
+bars = NodePath("../bars")
+
+[node name="spawner" parent="." node_paths=PackedStringArray("poison_effects", "player") instance=ExtResource("10_pkcug")]
+enemy_wave_number = 2
+poison_spawn_number = 10
+poison_effects = NodePath("../poison_effects")
+player = NodePath("..")
+
+[connection signal="animation_finished" from="Sprite2D" to="." method="_on_sprite_2d_animation_finished"]
+[connection signal="timeout" from="roll_timer" to="." method="_on_roll_timer_timeout"]

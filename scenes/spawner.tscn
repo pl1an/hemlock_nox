@@ -1,0 +1,18 @@
+[gd_scene load_steps=2 format=3 uid="uid://bup1e6docqhtj"]
+
+[ext_resource type="Script" path="res://scripts/spawner.gd" id="1_5mt07"]
+
+[node name="spawner" type="Node2D" node_paths=PackedStringArray("enemy_wave_timer", "poison_spawn_timer")]
+script = ExtResource("1_5mt07")
+enemy_wave_timer = NodePath("spawn_enemy_timer")
+poison_spawn_timer = NodePath("spawn_collectable_poison_timer")
+SPAWN_MINIMUM_RANGE = 2000.0
+
+[node name="spawn_enemy_timer" type="Timer" parent="."]
+wait_time = 10.0
+
+[node name="spawn_collectable_poison_timer" type="Timer" parent="."]
+wait_time = 5.0
+
+[connection signal="timeout" from="spawn_enemy_timer" to="." method="_on_spawn_enemy_timer_timeout"]
+[connection signal="timeout" from="spawn_collectable_poison_timer" to="." method="_on_spawn_collectable_poison_timer_timeout"]

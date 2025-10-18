@@ -1,0 +1,139 @@
+[gd_scene load_steps=7 format=3 uid="uid://7ml8ewikb304"]
+
+[ext_resource type="Script" path="res://scripts/menu.gd" id="1_brw38"]
+[ext_resource type="FontFile" uid="uid://kpwgh4mqjjp2" path="res://assets/fonts/Jacquard12-Regular.ttf" id="1_le8aj"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_wmclu"]
+bg_color = Color(0, 0, 0, 1)
+
+[sub_resource type="LabelSettings" id="LabelSettings_254un"]
+font = ExtResource("1_le8aj")
+font_size = 70
+font_color = Color(0.726223, 3.41728e-06, 5.77569e-07, 1)
+
+[sub_resource type="LabelSettings" id="LabelSettings_x05h5"]
+font = ExtResource("1_le8aj")
+font_size = 30
+
+[sub_resource type="LabelSettings" id="LabelSettings_lulw2"]
+font = ExtResource("1_le8aj")
+
+[node name="menu" type="Control" node_paths=PackedStringArray("hwp_panel", "hwp")]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+script = ExtResource("1_brw38")
+hwp_panel = NodePath("Panel")
+hwp = NodePath("HBoxContainer/MarginContainer2")
+
+[node name="Panel" type="Panel" parent="."]
+visible = false
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_wmclu")
+
+[node name="HBoxContainer" type="HBoxContainer" parent="."]
+layout_mode = 1
+anchors_preset = 14
+anchor_top = 0.5
+anchor_right = 1.0
+anchor_bottom = 0.5
+offset_top = -141.5
+offset_bottom = 141.5
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+
+[node name="MarginContainer" type="MarginContainer" parent="HBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 0
+size_flags_vertical = 4
+mouse_filter = 2
+theme_override_constants/margin_left = 30
+
+[node name="VBoxContainer" type="VBoxContainer" parent="HBoxContainer/MarginContainer"]
+layout_mode = 2
+mouse_filter = 2
+
+[node name="Label" type="Label" parent="HBoxContainer/MarginContainer/VBoxContainer"]
+layout_mode = 2
+text = "Hemlock Nox"
+label_settings = SubResource("LabelSettings_254un")
+
+[node name="HBoxContainer" type="HBoxContainer" parent="HBoxContainer/MarginContainer/VBoxContainer"]
+layout_mode = 2
+mouse_filter = 2
+alignment = 1
+
+[node name="Button" type="Button" parent="HBoxContainer/MarginContainer/VBoxContainer/HBoxContainer"]
+layout_mode = 2
+mouse_filter = 1
+theme_override_colors/font_disabled_color = Color(1, 1, 1, 1)
+theme_override_colors/font_hover_pressed_color = Color(1, 1, 1, 1)
+theme_override_colors/font_hover_color = Color(1, 0, 0, 1)
+theme_override_colors/font_pressed_color = Color(1, 0, 0, 1)
+theme_override_fonts/font = ExtResource("1_le8aj")
+theme_override_font_sizes/font_size = 25
+text = "Begin"
+
+[node name="Button2" type="Button" parent="HBoxContainer/MarginContainer/VBoxContainer/HBoxContainer"]
+layout_mode = 2
+mouse_filter = 1
+theme_override_colors/font_disabled_color = Color(1, 1, 1, 1)
+theme_override_colors/font_hover_pressed_color = Color(1, 1, 1, 1)
+theme_override_colors/font_hover_color = Color(1, 0, 0, 1)
+theme_override_colors/font_pressed_color = Color(1, 0, 0, 1)
+theme_override_fonts/font = ExtResource("1_le8aj")
+theme_override_font_sizes/font_size = 25
+text = "Secrets of the Art"
+
+[node name="MarginContainer2" type="MarginContainer" parent="HBoxContainer"]
+visible = false
+layout_mode = 2
+mouse_filter = 2
+theme_override_constants/margin_left = 50
+
+[node name="Label" type="Label" parent="HBoxContainer/MarginContainer2"]
+layout_mode = 2
+text = "Move with WASD
+
+Circle through poisons in tour inventory with Q and E 
+(our with the mouse scroll wheel)
+
+Roll with SPACE
+
+Trow the selected poison with LEFT-CLICK
+
+Every level up (after killing a certain amount of enemies) 
+will be rewarded with 3 upgrade choices
+
+Every one minute the dificulty rises"
+label_settings = SubResource("LabelSettings_x05h5")
+
+[node name="MarginContainer" type="MarginContainer" parent="."]
+layout_mode = 1
+anchors_preset = 2
+anchor_top = 1.0
+anchor_bottom = 1.0
+offset_top = -40.0
+offset_right = 101.0
+grow_vertical = 0
+theme_override_constants/margin_left = 10
+theme_override_constants/margin_bottom = 10
+
+[node name="Label2" type="Label" parent="MarginContainer"]
+layout_mode = 2
+text = "by: noend studios"
+label_settings = SubResource("LabelSettings_lulw2")
+
+[connection signal="pressed" from="HBoxContainer/MarginContainer/VBoxContainer/HBoxContainer/Button" to="." method="_on_button_pressed"]
+[connection signal="pressed" from="HBoxContainer/MarginContainer/VBoxContainer/HBoxContainer/Button2" to="." method="_on_button_2_pressed"]

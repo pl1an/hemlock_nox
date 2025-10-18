@@ -1,0 +1,9 @@
+[gd_scene load_steps=2 format=3 uid="uid://cbb13lfb5yccd"]
+
+[ext_resource type="Script" path="res://scripts/upgrade_manager.gd" id="1_o3hli"]
+
+[node name="upgrade_manager" type="Control"]
+layout_mode = 3
+anchors_preset = 0
+script = ExtResource("1_o3hli")
+rarity_color_array = Array[Color]([Color(0.601223, 0.601223, 0.601223, 1), Color(0.266701, 0.484858, 1, 1), Color(0.752941, 0, 1, 1), Color(1, 0.682353, 0, 1)])

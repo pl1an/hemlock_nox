@@ -1,0 +1,43 @@
+[gd_scene load_steps=5 format=3 uid="uid://bpagsb4rdbhhn"]
+
+[ext_resource type="Script" path="res://scripts/player.gd" id="1_8aqnk"]
+[ext_resource type="Texture2D" uid="uid://c7k77vmjx7tvc" path="res://icon.svg" id="2_nnitf"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_v1r0s"]
+size = Vector2(120, 119)
+
+[sub_resource type="GDScript" id="GDScript_k7x0c"]
+script/source = "extends Timer
+
+
+# Called when the node enters the scene tree for the first time.
+func _ready() -> void:
+	pass # Replace with function body.
+
+
+# Called every frame. 'delta' is the elapsed time since the previous frame.
+func _process(delta: float) -> void:
+	pass
+"
+
+[node name="player" type="CharacterBody2D"]
+top_level = true
+collision_layer = 2
+collision_mask = 55
+script = ExtResource("1_8aqnk")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture = ExtResource("2_nnitf")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("RectangleShape2D_v1r0s")
+
+[node name="Camera2D" type="Camera2D" parent="."]
+rotation_smoothing_enabled = true
+rotation_smoothing_speed = 2.0
+
+[node name="roll_timer" type="Timer" parent="."]
+wait_time = 0.5
+script = SubResource("GDScript_k7x0c")
+
+[connection signal="timeout" from="roll_timer" to="." method="_on_roll_timer_timeout"]

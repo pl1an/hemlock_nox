@@ -1,0 +1,284 @@
+[gd_scene load_steps=11 format=3 uid="uid://g1g2gdso5nl7"]
+
+[ext_resource type="Script" path="res://scripts/level_up_manager.gd" id="1_5qvsy"]
+[ext_resource type="Texture2D" uid="uid://cdjvgce44c5mt" path="res://assets/level_managemnt_ui/pixil-frame-0(7).png" id="1_n273h"]
+[ext_resource type="Texture2D" uid="uid://dnjhsfeuud1jq" path="res://assets/level_managemnt_ui/pixil-frame-0(8).png" id="2_codif"]
+[ext_resource type="FontFile" uid="uid://kpwgh4mqjjp2" path="res://assets/fonts/Jacquard12-Regular.ttf" id="4_fxqjv"]
+[ext_resource type="PackedScene" uid="uid://cbb13lfb5yccd" path="res://scenes/upgrade_manager.tscn" id="5_40mre"]
+
+[sub_resource type="LabelSettings" id="LabelSettings_yeyit"]
+font = ExtResource("4_fxqjv")
+font_size = 20
+font_color = Color(1, 0.631373, 0, 1)
+
+[sub_resource type="LabelSettings" id="LabelSettings_4176e"]
+font = ExtResource("4_fxqjv")
+font_size = 30
+font_color = Color(0, 0, 0, 1)
+
+[sub_resource type="LabelSettings" id="LabelSettings_wh62d"]
+font = ExtResource("4_fxqjv")
+font_size = 26
+font_color = Color(0, 0, 0, 1)
+
+[sub_resource type="LabelSettings" id="LabelSettings_wxoet"]
+font = ExtResource("4_fxqjv")
+font_size = 20
+
+[sub_resource type="LabelSettings" id="LabelSettings_kcedj"]
+font = ExtResource("4_fxqjv")
+font_size = 20
+
+[node name="level_up_manager" type="Control" node_paths=PackedStringArray("upgrade_manager", "option_buttons")]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+script = ExtResource("1_5qvsy")
+upgrade_manager = NodePath("upgrade_manager")
+option_buttons = [NodePath("bg/HBoxContainer/opt1/opt1_button"), NodePath("bg/HBoxContainer/opt2/opt2_button"), NodePath("bg/HBoxContainer/opt3/opt3_button")]
+
+[node name="bg" type="TextureRect" parent="."]
+visible = false
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+texture = ExtResource("1_n273h")
+
+[node name="HBoxContainer" type="HBoxContainer" parent="bg"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+alignment = 1
+
+[node name="opt1" type="MarginContainer" parent="bg/HBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 4
+mouse_filter = 2
+theme_override_constants/margin_top = 30
+theme_override_constants/margin_bottom = 30
+
+[node name="opt1_button" type="TextureButton" parent="bg/HBoxContainer/opt1"]
+custom_minimum_size = Vector2(300, 0)
+layout_mode = 2
+texture_normal = ExtResource("2_codif")
+stretch_mode = 5
+
+[node name="rarity" type="Label" parent="bg/HBoxContainer/opt1/opt1_button"]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.0349333
+anchor_top = 0.130662
+anchor_right = 0.7616
+anchor_bottom = 0.361954
+offset_left = 30.52
+offset_top = -59.8291
+offset_right = 30.52
+offset_bottom = 41.171
+grow_horizontal = 2
+grow_vertical = 2
+text = "legendary"
+label_settings = SubResource("LabelSettings_yeyit")
+horizontal_alignment = 1
+vertical_alignment = 1
+autowrap_mode = 3
+metadata/_edit_use_anchors_ = true
+
+[node name="title" type="Label" parent="bg/HBoxContainer/opt1/opt1_button"]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.137
+anchor_top = 0.265
+anchor_right = 0.863
+anchor_bottom = 0.431646
+offset_left = -0.100002
+offset_top = 0.179993
+offset_right = 0.100067
+offset_bottom = 0.1922
+grow_horizontal = 2
+grow_vertical = 2
+text = "Keep your body vulnerable"
+label_settings = SubResource("LabelSettings_4176e")
+horizontal_alignment = 1
+vertical_alignment = 1
+autowrap_mode = 3
+metadata/_edit_use_anchors_ = true
+
+[node name="description" type="Label" parent="bg/HBoxContainer/opt1/opt1_button"]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.136667
+anchor_top = 0.443517
+anchor_right = 0.863
+anchor_bottom = 0.874
+offset_top = 0.21199
+offset_right = 0.0999756
+offset_bottom = 0.0880127
+grow_horizontal = 2
+grow_vertical = 2
+text = "Gas poisons deal X more damage over time. but remember the law  of equivalent exchange: more damage to them, more damage to you."
+label_settings = SubResource("LabelSettings_wh62d")
+horizontal_alignment = 1
+vertical_alignment = 1
+autowrap_mode = 3
+metadata/_edit_use_anchors_ = true
+
+[node name="opt2" type="MarginContainer" parent="bg/HBoxContainer"]
+layout_mode = 2
+mouse_filter = 2
+theme_override_constants/margin_top = 30
+theme_override_constants/margin_bottom = 30
+
+[node name="opt2_button" type="TextureButton" parent="bg/HBoxContainer/opt2"]
+custom_minimum_size = Vector2(300, 0)
+layout_mode = 2
+texture_normal = ExtResource("2_codif")
+stretch_mode = 5
+
+[node name="rarity" type="Label" parent="bg/HBoxContainer/opt2/opt2_button"]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.0349333
+anchor_top = 0.130662
+anchor_right = 0.7616
+anchor_bottom = 0.361954
+offset_left = 30.52
+offset_top = -59.8291
+offset_right = 30.52
+offset_bottom = 41.171
+grow_horizontal = 2
+grow_vertical = 2
+text = "legendary"
+label_settings = SubResource("LabelSettings_wxoet")
+horizontal_alignment = 1
+vertical_alignment = 1
+autowrap_mode = 3
+metadata/_edit_use_anchors_ = true
+
+[node name="title" type="Label" parent="bg/HBoxContainer/opt2/opt2_button"]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.137
+anchor_top = 0.269
+anchor_right = 0.863
+anchor_bottom = 0.429
+offset_left = -0.100002
+offset_top = -0.172012
+offset_right = 0.0999756
+offset_bottom = -0.252014
+grow_horizontal = 2
+grow_vertical = 2
+text = "Poisonous"
+label_settings = SubResource("LabelSettings_4176e")
+horizontal_alignment = 1
+vertical_alignment = 1
+autowrap_mode = 3
+metadata/_edit_use_anchors_ = true
+
+[node name="description" type="Label" parent="bg/HBoxContainer/opt2/opt2_button"]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.137
+anchor_top = 0.434
+anchor_right = 0.863333
+anchor_bottom = 0.878
+offset_left = -0.100002
+offset_top = -0.192017
+offset_bottom = -0.264038
+grow_horizontal = 2
+grow_vertical = 2
+text = "Gas poisons deal X more damage over time. but remember the law  of equivalent exchange: more damage to them, more damage to you."
+label_settings = SubResource("LabelSettings_wh62d")
+horizontal_alignment = 1
+vertical_alignment = 1
+autowrap_mode = 3
+metadata/_edit_use_anchors_ = true
+
+[node name="opt3" type="MarginContainer" parent="bg/HBoxContainer"]
+layout_mode = 2
+mouse_filter = 2
+theme_override_constants/margin_top = 30
+theme_override_constants/margin_bottom = 30
+
+[node name="opt3_button" type="TextureButton" parent="bg/HBoxContainer/opt3"]
+custom_minimum_size = Vector2(300, 0)
+layout_mode = 2
+texture_normal = ExtResource("2_codif")
+stretch_mode = 5
+
+[node name="rarity" type="Label" parent="bg/HBoxContainer/opt3/opt3_button"]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.0349333
+anchor_top = 0.130662
+anchor_right = 0.7616
+anchor_bottom = 0.361954
+offset_left = 30.52
+offset_top = -59.8291
+offset_right = 30.52
+offset_bottom = 41.171
+grow_horizontal = 2
+grow_vertical = 2
+text = "legendary"
+label_settings = SubResource("LabelSettings_kcedj")
+horizontal_alignment = 1
+vertical_alignment = 1
+autowrap_mode = 3
+metadata/_edit_use_anchors_ = true
+
+[node name="title" type="Label" parent="bg/HBoxContainer/opt3/opt3_button"]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.137
+anchor_top = 0.27
+anchor_right = 0.863
+anchor_bottom = 0.425
+offset_left = -0.100002
+offset_top = 0.23999
+offset_right = 0.0999756
+offset_bottom = 0.0999908
+grow_horizontal = 2
+grow_vertical = 2
+text = "Poisonous"
+label_settings = SubResource("LabelSettings_4176e")
+horizontal_alignment = 1
+vertical_alignment = 1
+autowrap_mode = 3
+metadata/_edit_use_anchors_ = true
+
+[node name="description" type="Label" parent="bg/HBoxContainer/opt3/opt3_button"]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.136667
+anchor_top = 0.502551
+anchor_right = 0.863334
+anchor_bottom = 0.795068
+offset_top = -50.5
+offset_bottom = 50.5
+grow_horizontal = 2
+grow_vertical = 2
+text = "Gas poisons deal X more damage over time. but remember the law  of equivalent exchange: more damage to them, more damage to you."
+label_settings = SubResource("LabelSettings_wh62d")
+horizontal_alignment = 1
+vertical_alignment = 1
+autowrap_mode = 3
+metadata/_edit_use_anchors_ = true
+
+[node name="upgrade_manager" parent="." node_paths=PackedStringArray("level_up") instance=ExtResource("5_40mre")]
+level_up = NodePath("..")
+
+[connection signal="pressed" from="bg/HBoxContainer/opt1/opt1_button" to="." method="_on_opt_1_button_pressed"]
+[connection signal="pressed" from="bg/HBoxContainer/opt2/opt2_button" to="." method="_on_opt_2_button_pressed"]
+[connection signal="mouse_entered" from="bg/HBoxContainer/opt3/opt3_button" to="." method="_on_opt_3_button_mouse_entered"]
+[connection signal="pressed" from="bg/HBoxContainer/opt3/opt3_button" to="." method="_on_opt_3_button_pressed"]

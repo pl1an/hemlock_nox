@@ -1,0 +1,6 @@
+[gd_scene load_steps=2 format=3 uid="uid://cvktl1yjfnbnu"]
+
+[ext_resource type="Script" path="res://scripts/poison_effects.gd" id="1_vooo8"]
+
+[node name="poison_effects" type="Node2D"]
+script = ExtResource("1_vooo8")
